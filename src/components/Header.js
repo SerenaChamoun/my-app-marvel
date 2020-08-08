@@ -73,6 +73,9 @@ const Header = () => {
               fontSize: "20px",
               fontWeight: "bold",
             }}
+            onClick={(event) => {
+              history.push("/favorites");
+            }}
           >
             Favorites
           </button>

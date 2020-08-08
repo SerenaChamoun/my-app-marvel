@@ -3,31 +3,41 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import Search from "../components/Search";
-const Characters = () => {
+import ButtonFav from "../components/ButtonFav";
+import Pagination from "../components/Pagination";
+
+const Characters = ({ favoriteItems, setFavoriteItems, route, setRoute }) => {
+  setRoute("characters");
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  // state to manipulate pages
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3001/characters");
+      const response = await axios.get(
+        `http://localhost:3001/characters/?page=${page}`
+      );
+      console.log(`http://localhost:3001/characters/?page=${page}`);
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
 
     fetchData();
-  }, []);
+  }, [page]);
 
   return isLoading ? (
     <span>Chargement en cours ....</span>
   ) : (
     <div className="characters">
       CHARACTERS PAGE
-      <Search setData={setData} />
+      <Search setData={setData} route={route} />
       {data.data.results.map((character, index) => {
         return (
-          <Link to={`/character/${character.id}/comics`}>
-            <div className="character">
+          <div className="character_sheet">
+            <Link to={`/character/${character.id}/comics`}>
               <div className="characterPic">
                 <img
                   alt={character.name}
@@ -43,10 +53,23 @@ const Characters = () => {
                 <div>{character.name}</div>
                 <div>{character.description}</div>
               </div>
-            </div>
-          </Link>
+            </Link>
+            <ButtonFav
+              favoriteItems={favoriteItems}
+              setFavoriteItems={setFavoriteItems}
+              obj={{
+                name: character.name,
+                description: character.description,
+                picture:
+                  character.thumbnail.path +
+                  "/portrait_xlarge." +
+                  character.thumbnail.extension,
+              }}
+            />
+          </div>
         );
       })}
+      <Pagination page={page} setPage={setPage} setIsLoading={setIsLoading} />
     </div>
   );
 };

@@ -1,35 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import Favorites from "./containers/Favorites";
 import Characters from "./containers/Characters";
 import Comics from "./containers/Comics";
 import Header from "./components/Header";
-import Search from "./components/Search";
+
+// Importation de Fontawesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+library.add(faHeart);
 
 function App() {
+  // state to give a choice between characters and comics in search button
+  const [route, setRoute] = useState("");
+
+  //state to save the list of favorites on the browser
+  const localFav = localStorage.getItem("favorites");
+  let state;
+  if (localFav) {
+    state = JSON.parse(localFav);
+  }
+  const [favoriteItems, setFavoriteItems] = useState(state ? state : []);
+
   return (
     <Router>
       <Header />
       <Switch>
         <Route path="/comics">
-          <Comics />
+          <Comics
+            route={route}
+            setRoute={setRoute}
+            favoriteItems={favoriteItems}
+            setFavoriteItems={setFavoriteItems}
+          />
         </Route>
-
-        {/* <Route path="/comics/:title">
-          <Search />
-        </Route> */}
 
         <Route path="/character/:id/comics">
-          <Comics />
+          <Comics route={route} setRoute={setRoute} />
         </Route>
 
-        <Route exact path="characters/:name">
-          <Search />
+        <Route path="/favorites">
+          <Favorites favorites={favoriteItems} />
         </Route>
 
         <Route exact path="/characters">
-          <Characters />
+          <Characters
+            route={route}
+            setRoute={setRoute}
+            favoriteItems={favoriteItems}
+            setFavoriteItems={setFavoriteItems}
+          />
         </Route>
       </Switch>
     </Router>
