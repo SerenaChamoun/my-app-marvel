@@ -19,7 +19,10 @@ const Comics = ({ route, setRoute, favoriteItems, setFavoriteItems }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "http://localhost:3001/comics" + (id ? "/" + id : "") + `?page=${page}`
+        process.env.REACT_APP_BACKEND_URL +
+          "comics" +
+          (id ? "/" + id : "") +
+          `?page=${page}`
       );
 
       // let res;

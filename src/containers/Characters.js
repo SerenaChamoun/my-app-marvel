@@ -17,9 +17,9 @@ const Characters = ({ favoriteItems, setFavoriteItems, route, setRoute }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:3001/characters/?page=${page}`
+        process.env.REACT_APP_BACKEND_URL + `characters/?page=${page}`
       );
-      console.log(`http://localhost:3001/characters/?page=${page}`);
+
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
