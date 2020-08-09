@@ -1,5 +1,5 @@
 import React from "react";
-//Import du package Fontawesome ici pour pouvoir l'utiliser sur le composant Characters
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ButtonFav = ({ favoriteItems, setFavoriteItems, obj }) => {

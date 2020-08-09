@@ -9,10 +9,9 @@ const Search = ({ setData, route }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.get(
-      `http://localhost:3001/${route}/search/${searchInput}`
+      process.env.REACT_APP_BACKEND_URL + `${route}/search/${searchInput}`
     );
 
-    console.log(`http://localhost:3001/${route}/search/${searchInput}`);
     //console.log(response.data);
     setData(response.data);
   };
