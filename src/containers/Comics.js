@@ -42,7 +42,6 @@ const Comics = ({ route, setRoute, favoriteItems, setFavoriteItems }) => {
     <span>En cours de chargement...</span>
   ) : (
     <div className="comics">
-      COMICS PAGE
       <Search setData={setData} route={route} />
       {data.data.results.map((comic, index) => {
         return (
@@ -58,8 +57,10 @@ const Comics = ({ route, setRoute, favoriteItems, setFavoriteItems }) => {
                   alt={comic.title}
                 />
               </div>
-              <div>{comic.title}</div>
-              <div>{comic.description}</div>
+              <div>
+                <div>{comic.title}</div>
+                <div>{comic.description}</div>
+              </div>
             </div>
             <ButtonFav
               favoriteItems={favoriteItems}

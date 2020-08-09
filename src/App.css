@@ -1,0 +1,330 @@
+:root {
+  --color: #ec1d24;
+  --font-family: "Roboto Condensed", sans-serif;
+}
+
+.header > nav > div > button {
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  line-height: 17px;
+  letter-spacing: 1px;
+  background-color: black;
+}
+
+.header > nav > div > button:focus {
+  background-color: var(--color);
+}
+
+/* CHARACTERS PAGE */
+.characters {
+  width: 80%;
+  height: 100%;
+  /* background-color: lightslategrey; */
+  margin: 0 auto;
+  margin-top: 20px;
+
+  display: absolute;
+}
+.characters > .search {
+  width: 50%;
+  height: 50px;
+  margin: 60px auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.characters > .search > input {
+  margin-right: 20px;
+  height: 100%;
+  width: 50%;
+  font-size: 30px;
+  font-family: var(--font-family);
+  padding-left: 60px;
+  border-style: none;
+  /* background-color: #f4f6f7; */
+  border-bottom: 4px solid black;
+}
+.characters > .search > button {
+  height: 100%;
+  width: 30%;
+  background-color: black;
+  color: white;
+  border-style: none;
+  font-size: 20px;
+}
+
+.character_sheet {
+  width: 80%;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  border-bottom-right-radius: 120px;
+  position: relative;
+}
+
+.character_sheet:hover {
+  bottom: 5px;
+}
+
+.character_sheet:hover {
+  background-color: var(--color);
+}
+
+.character_sheet > a {
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none;
+  color: white;
+}
+
+.character_sheet > a > div:not(:first-child) {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.character_sheet > a > .characterPic > img {
+  height: 100%;
+  object-fit: contain;
+  border-right: 5px solid #ec1d24;
+}
+
+.buttonFav > button {
+  position: absolute;
+  top: 5px;
+  left: 120px;
+  border-style: none;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+.character_sheet > a > div:nth-child(2) > div {
+  font-family: var(--font-family);
+}
+
+.character_sheet > a > div:nth-child(2) > div:first-child {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.character_sheet > a > div:nth-child(2) > div:last-child {
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #bbbbbb;
+  text-align: justify;
+  width: 90%;
+}
+
+/* PAGINATION IN CHARACTERS PAGE */
+.characters > .pagination {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters > .pagination > span > button {
+  margin-left: 25px;
+  background-color: var(--color);
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.characters > .pagination > span > button:hover {
+  background-color: white;
+  color: var(--color);
+}
+
+/* COMICS PAGE */
+
+.comics {
+  width: 80%;
+  height: 100%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  display: absolute;
+}
+
+.comics > .search {
+  width: 50%;
+  height: 50px;
+  margin: 60px auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comics > .search > input {
+  margin-right: 20px;
+  height: 100%;
+  width: 50%;
+  font-size: 30px;
+  font-family: var(--font-family);
+  padding-left: 60px;
+  border-style: none;
+  border-bottom: 4px solid black;
+}
+.comics > .search > button {
+  height: 100%;
+  width: 20%;
+  background-color: black;
+  color: white;
+  border-style: none;
+  font-size: 20px;
+}
+
+.comic_sheet {
+  width: 80%;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  border-bottom-right-radius: 120px;
+  position: relative;
+}
+
+.comic_sheet:hover {
+  bottom: 5px;
+}
+
+.comic_sheet:hover {
+  background-color: var(--color);
+}
+
+.comic_sheet > .comic {
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none;
+  color: white;
+}
+
+.comic_sheet > .comic > div:not(:first-child) {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.comic_sheet > .comic > div:first-child > img {
+  height: 100%;
+  object-fit: contain;
+  border-right: 5px solid #ec1d24;
+}
+
+.comic_sheet > .comic > div:not(:first-child) {
+  font-family: var(--font-family);
+}
+
+.comic_sheet > .comic > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.comic_sheet > .comic > div:nth-child(2) > div:first-child {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.comic_sheet > .comic > div:nth-child(2) > div:last-child {
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #bbbbbb;
+  text-align: justify;
+  width: 90%;
+  text-transform: uppercase;
+}
+
+/* PAGINATION IN COMICS PAGE */
+.comics > .pagination {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comics > .pagination > span > button {
+  margin-left: 25px;
+  background-color: var(--color);
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* PAGE FAVORITES */
+
+.favorites {
+  width: 80%;
+  height: 100%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  display: absolute;
+}
+
+.favorite_sheet {
+  width: 80%;
+  background-color: var(--color);
+  margin: 0 auto;
+  margin-top: 20px;
+  border-bottom-right-radius: 120px;
+
+  display: flex;
+}
+
+.favorite_sheet:hover {
+  bottom: 5px;
+}
+
+.favorite_sheet > div:not(:first-child) {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.favorite_sheet > img {
+  height: 100%;
+  object-fit: contain;
+  border-right: 5px solid black;
+}
+
+.favorite_sheet > div:nth-child(2) {
+  font-family: var(--font-family);
+}
+
+.favorite_sheet > div:nth-child(2) > div:first-child {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.favorite_sheet > div:nth-child(2) > div:last-child {
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #bbbbbb;
+  text-align: justify;
+  width: 90%;
+}

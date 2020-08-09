@@ -32,7 +32,6 @@ const Characters = ({ favoriteItems, setFavoriteItems, route, setRoute }) => {
     <span>Chargement en cours ....</span>
   ) : (
     <div className="characters">
-      CHARACTERS PAGE
       <Search setData={setData} route={route} />
       {data.data.results.map((character, index) => {
         return (
@@ -50,8 +49,13 @@ const Characters = ({ favoriteItems, setFavoriteItems, route, setRoute }) => {
               </div>
 
               <div>
-                <div>{character.name}</div>
-                <div>{character.description}</div>
+                <div style={{ textTransform: "uppercase" }}>
+                  {character.name}
+                </div>
+                <br />
+                <div style={{ textTransform: "uppercase" }}>
+                  {character.description}
+                </div>
               </div>
             </Link>
             <ButtonFav

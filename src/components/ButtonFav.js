@@ -3,6 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ButtonFav = ({ favoriteItems, setFavoriteItems, obj }) => {
+  console.log(typeof favoriteItems);
   const index = favoriteItems.findIndex((fav) =>
     fav.name ? fav.name === obj.name : fav.title === obj.title
   );
@@ -22,7 +23,7 @@ const ButtonFav = ({ favoriteItems, setFavoriteItems, obj }) => {
     <div className="buttonFav">
       <button onClick={handleFavoriteItems}>
         <FontAwesomeIcon
-          style={{ color: index === -1 ? "white" : "green" }}
+          style={{ color: index === -1 ? "white" : "#ec1d24" }}
           icon="heart"
         />
       </button>

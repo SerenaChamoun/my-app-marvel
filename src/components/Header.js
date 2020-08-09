@@ -32,10 +32,9 @@ const Header = () => {
               width: "140px",
               height: "50px",
               borderStyle: "none",
-              backgroundColor: "#EC1D24",
+
               color: "white",
               fontSize: "20px",
-              fontWeight: "bold",
             }}
             onClick={(event) => {
               history.push("/characters");
@@ -50,10 +49,9 @@ const Header = () => {
               width: "140px",
               height: "50px",
               borderStyle: "none",
-              backgroundColor: "#EC1D24",
+
               color: "white",
               fontSize: "20px",
-              fontWeight: "bold",
             }}
             onClick={(event) => {
               history.push("/comics");
@@ -68,10 +66,9 @@ const Header = () => {
               width: "140px",
               height: "50px",
               borderStyle: "none",
-              backgroundColor: "#EC1D24",
+
               color: "white",
               fontSize: "20px",
-              fontWeight: "bold",
             }}
             onClick={(event) => {
               history.push("/favorites");

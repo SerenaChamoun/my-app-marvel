@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Search = ({ setData, route }) => {
   const [searchInput, setSearchInput] = useState("");
 
@@ -15,11 +17,22 @@ const Search = ({ setData, route }) => {
     setData(response.data);
   };
   return (
-    <div className="search">
+    <div className="search" style={{ position: "relative" }}>
       <input
+        placeholder="SEARCH"
         type="text"
         value={searchInput}
         onChange={(event) => setSearchInput(event.target.value)}
+      />
+      <FontAwesomeIcon
+        style={{
+          color: "black",
+          fontSize: "25px",
+          position: "absolute",
+          top: "10px",
+          left: "50px",
+        }}
+        icon="search"
       />
       <button onClick={handleSubmit}>Search</button>
     </div>

@@ -9,8 +9,8 @@ import Header from "./components/Header";
 
 // Importation de Fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-library.add(faHeart);
+import { faHeart, faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faHeart, faSearch);
 
 function App() {
   // state to give a choice between characters and comics in search button
@@ -22,6 +22,8 @@ function App() {
   if (localFav) {
     state = JSON.parse(localFav);
   }
+
+  console.log("state:" + state);
   const [favoriteItems, setFavoriteItems] = useState(state ? state : []);
 
   return (
@@ -38,7 +40,12 @@ function App() {
         </Route>
 
         <Route path="/character/:id/comics">
-          <Comics route={route} setRoute={setRoute} />
+          <Comics
+            route={route}
+            setRoute={setRoute}
+            favoriteItems={favoriteItems}
+            setFavoriteItems={setFavoriteItems}
+          />
         </Route>
 
         <Route path="/favorites">
